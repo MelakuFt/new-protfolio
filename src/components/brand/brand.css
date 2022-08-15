@@ -1,0 +1,16 @@
+.btn {
+    width: max-content;
+    display: inline-block;
+    background: #BABDC3;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid ;
+    align-items: center;
+    font-size: 17px;
+    font: bold;
+}
+.btn:hover {
+    background-color: white;
+    border-color: transparent;
+}

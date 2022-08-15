@@ -1,0 +1,50 @@
+.container-fluid {
+
+    background: white;
+    padding: 6rem;
+}
+.row {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+.service-box {
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: all .3s linear;
+    padding: 25px 35px;
+    position: relative;
+    width: auto;
+}
+.service-box:hover {
+    box-shadow: 0 0  15px rgba(0, 0, 0, 0.3);
+}
+.icon {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% -50%);
+
+}
+
+@media screen and (max-width:1020px) {
+     .row {
+         display: grid;
+         grid-template-columns: repeat(1, 1fr);
+     }
+}
+@media screen and (max-width:460px) {
+    .row {
+        display: grid;
+        grid-template-rows: repeat(1, 1fr);
+    }
+}
+@media screen and (max-width:418px) {
+    .service-box {
+        padding: 1px 1px;  
+
+           
+    }
+}
