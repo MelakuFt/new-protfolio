@@ -2,7 +2,35 @@ import React from 'react'
 import {FcServices} from 'react-icons/fc';
 import {MdMovieCreation} from 'react-icons/md';
 import {MdDesignServices} from 'react-icons/md';
+import {icon1, icon2, icon3} from './import';
 import './service.css';
+import {Pagination } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+
+const data = [
+    {
+        icon: icon1,
+        title: 'Web Development',
+        review: ' Develop software applications with an efficient and functional front-end web app, that rely on proven technology and frameworks.'
+    },
+    {
+        icon: icon2,
+        title: 'Content creation',
+        review: '   Using HTML, CSS, JavaScript and React.js to bring concepts to life by writing dedicated solutions from scratch.'
+    },
+    {
+        icon: icon3,
+        title: 'Design',
+        review: ' 1.Web  2.Mobile  3.UI/UX  '
+    },
+]
 
 const Service = () => {
   return (
@@ -52,7 +80,28 @@ const Service = () => {
           
             
         </div>
-      
+           <Swiper className='sm:hidden container serivce__container '
+            // install Swiper modules
+                    modules={[ Pagination]}
+                    spaceBetween={40}
+                    slidesPerView={1}
+                    pagination={{ clickable: true }}
+     >
+                {
+                    data.map (({icon, title, review}, index) => {
+                        return (
+                            <SwiperSlide key={index} className='service-component'>
+                               <div className='client__avatar'>
+                                < img src={icon} alt="/" />
+                               </div>
+                               <h2 className='clinet__name text-1xl font-bold'>{title}</h2>
+                               <h3 className='client__review'>{review}</h3>
+                            </SwiperSlide>
+                        )
+                    })
+                } 
+           </Swiper>
+
     </div>
   )
 }
